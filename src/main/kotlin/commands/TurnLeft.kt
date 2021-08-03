@@ -4,9 +4,9 @@ import com.jcolorado.kata.marsrover.base.Grid
 import com.jcolorado.kata.marsrover.states.OrientationState
 import com.jcolorado.kata.marsrover.base.Point
 
-class TurnLeft(grid: Grid) : RoverCommand(grid) {
+class TurnLeft() : RoverCommand() {
 
-    override fun doMove(position: Point, orientation: OrientationState): Point {
+    override fun doMove(position: Point, orientation: OrientationState, grid: Grid): Point {
         return position
     }
 

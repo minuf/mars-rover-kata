@@ -10,7 +10,7 @@ import com.jcolorado.kata.marsrover.commands.TurnRight
 import com.jcolorado.kata.marsrover.exceptions.ObstacleException
 import com.jcolorado.kata.marsrover.states.North
 
-class Rover(grid: Grid = Grid(),
+class Rover(private val grid: Grid = Grid(),
             initialPosition: String = "0,0",
             initialOrientation: String = North.TAG)
     : Robot(initialPosition, initialOrientation) {
@@ -27,15 +27,15 @@ class Rover(grid: Grid = Grid(),
     @Throws(ObstacleException::class)
     private fun executeCommand(roverCommand: RoverCommand?) {
         if (null != roverCommand) {
-            roverCommand.doMove(position, orientation).also { position = it }
+            roverCommand.doMove(position, orientation, grid).also { position = it }
             roverCommand.doTurn((orientation)).also { orientation = it }
         }
     }
 
     init {
-        MoveForward(grid).also { roverCommands['f'] = it }
-        MoveBackward(grid).also { roverCommands['b'] = it }
-        TurnRight(grid).also { roverCommands['r'] = it }
-        TurnLeft(grid).also { roverCommands['l'] = it }
+        MoveForward().also { roverCommands['f'] = it }
+        MoveBackward().also { roverCommands['b'] = it }
+        TurnRight().also { roverCommands['r'] = it }
+        TurnLeft().also { roverCommands['l'] = it }
     }
 }

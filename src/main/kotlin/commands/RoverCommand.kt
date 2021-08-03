@@ -10,15 +10,17 @@ import com.jcolorado.kata.marsrover.states.South
 import com.jcolorado.kata.marsrover.states.West
 import com.jcolorado.kata.marsrover.strategies.*
 
-abstract class RoverCommand(private val grid: Grid) {
+abstract class RoverCommand() {
 
     private val moveForwardInSphereStrategies: HashMap<String, MoveForwardInSphereStrategy> = HashMap()
 
     @Throws(ObstacleException::class)
-    open fun doMove(position: Point, orientation: OrientationState): Point {
+    open fun doMove(position: Point,
+                    orientation: OrientationState,
+                    grid: Grid): Point {
         val nextPosition =
                 moveForwardInSphereStrategies[orientation.toString()]?.execute(position, grid)
-        if (nextPosition?.let { isObstacle(it) } == true) {
+        if (nextPosition?.let { isObstacle(it, grid) } == true) {
             throw ObstacleException("OBSTACLE FOUND AT:  $position")
         }
         return nextPosition!!
@@ -26,7 +28,7 @@ abstract class RoverCommand(private val grid: Grid) {
 
     abstract fun doTurn(orientation: OrientationState): OrientationState
 
-    private fun isObstacle(point: Point): Boolean {
+    private fun isObstacle(point: Point, grid: Grid): Boolean {
         for (obstacle in grid.obstacles) {
             if (point == obstacle) {
                 return true

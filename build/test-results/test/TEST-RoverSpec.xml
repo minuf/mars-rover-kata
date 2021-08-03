@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="RoverSpec" tests="12" skipped="0" failures="0" errors="0" timestamp="2021-08-03T14:59:26" hostname="ITJorgeColorado.home" time="0.018">
+<testsuite name="RoverSpec" tests="12" skipped="0" failures="0" errors="0" timestamp="2021-08-03T15:53:47" hostname="ITJorgeColorado.home" time="0.013">
   <properties/>
-  <testcase name="shouldRunAndWalkWhenModeChanges" classname="RoverSpec" time="0.015"/>
-  <testcase name="shouldIgnoreUnrecognizedCommand" classname="RoverSpec" time="0.001"/>
+  <testcase name="shouldRunAndWalkWhenModeChanges" classname="RoverSpec" time="0.01"/>
+  <testcase name="shouldIgnoreUnrecognizedCommand" classname="RoverSpec" time="0.0"/>
   <testcase name="newInstanceShouldSetRoverInitialDirection" classname="RoverSpec" time="0.0"/>
   <testcase name="shouldMoveRoverBackward" classname="RoverSpec" time="0.0"/>
   <testcase name="newInstanceShouldSetRoverInitialPoint" classname="RoverSpec" time="0.0"/>
   <testcase name="shouldMoveRoverForward" classname="RoverSpec" time="0.0"/>
-  <testcase name="shouldIgnoreCommandUpperLowerCase" classname="RoverSpec" time="0.0"/>
+  <testcase name="shouldIgnoreCommandUpperLowerCase" classname="RoverSpec" time="0.001"/>
   <testcase name="shouldEncounterObstacleAndReportWithException" classname="RoverSpec" time="0.0"/>
   <testcase name="shouldEncounterObstacleAndMoveToLatestPosition" classname="RoverSpec" time="0.001"/>
   <testcase name="shouldTurnRoverDirectionLeft" classname="RoverSpec" time="0.0"/>
