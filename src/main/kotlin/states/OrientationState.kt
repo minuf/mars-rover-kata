@@ -7,6 +7,4 @@ interface OrientationState {
     fun getLeft(): OrientationState
     fun getRight(): OrientationState
     fun getBack(): OrientationState
-
-    fun getForwardPosition(position: Point, grid: Grid): Point
 }
